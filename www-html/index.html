@@ -11,7 +11,8 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcetgUsAAAAAI2SMqNATd2Eu5XkTp1ZnxZLZokF"></script>
+    <!-- script src="https://www.google.com/recaptcha/enterprise.js?render=6LcetgUsAAAAAI2SMqNATd2Eu5XkTp1ZnxZLZokF"></script -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6Lf1KSAsAAAAAGmQMYzjCW7axX-zHET6L4dOwt8E"></script>
 </head>
 <body>
     <!-- Animated Background -->
@@ -117,7 +118,8 @@
             let token = null;
 
             grecaptcha.enterprise.ready(async () => {
-                token = await grecaptcha.enterprise.execute('6LcetgUsAAAAAI2SMqNATd2Eu5XkTp1ZnxZLZokF', {action: 'LOGIN'});
+                //token = await grecaptcha.enterprise.execute('6LcetgUsAAAAAI2SMqNATd2Eu5XkTp1ZnxZLZokF', {action: 'LOGIN'});
+                token = await grecaptcha.enterprise.execute('6Lf1KSAsAAAAAGmQMYzjCW7axX-zHET6L4dOwt8E', {action: 'LOGIN'});
             });
 
             if (!submitBtn) return;
