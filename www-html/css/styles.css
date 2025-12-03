@@ -1,0 +1,295 @@
+/* ===================================
+   CSS Custom Properties (Variables)
+   =================================== */
+:root {
+    --cosmic-dark: #0a0e27;
+    --cosmic-blue: #1a2332;
+    --hydrogen-cyan: #00d4ff;
+    --hydrogen-purple: #8b5cf6;
+    --cosmic-accent: #ff6b9d;
+    --text-light: #e0e7ff;
+    --card-bg: rgba(26, 35, 50, 0.85);
+}
+
+/* ===================================
+   Base Styles
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-light);
+    background-color: var(--cosmic-dark);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ===================================
+   Cosmic Animated Background
+   =================================== */
+.cosmic-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+/* Starfield animations */
+.stars,
+.stars2,
+.stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.stars {
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 60px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 50px 50px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 10px, #eee, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 5s ease-in-out infinite;
+    opacity: 0.4;
+}
+
+.stars2 {
+    background-image: 
+        radial-gradient(1px 1px at 100px 120px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 150px 90px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 40px 60px, #eee, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    animation: twinkle 7s ease-in-out infinite;
+    animation-delay: 1s;
+    opacity: 0.3;
+}
+
+.stars3 {
+    background-image: 
+        radial-gradient(1px 1px at 200px 150px, var(--hydrogen-cyan), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 250px 80px, var(--hydrogen-purple), rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 180px 200px, var(--cosmic-accent), rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 400px 400px;
+    animation: twinkle 10s ease-in-out infinite;
+    animation-delay: 2s;
+    opacity: 0.2;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
+}
+
+/* ===================================
+   Main Container
+   =================================== */
+.main-container {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+/* ===================================
+   Logo Section
+   =================================== */
+.logo-section {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.logo-container {
+    position: relative;
+}
+
+.logo-image {
+    /* max-width: 300px; */
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 20px var(--hydrogen-cyan));
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.logo-placeholder {
+    padding: 2rem;
+}
+
+.cosmic-title {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--hydrogen-cyan), var(--hydrogen-purple), var(--cosmic-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    margin-bottom: 0.5rem;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.8;
+}
+
+/* ===================================
+   Content Section
+   =================================== */
+.content-section {
+    margin-bottom: 4rem;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.content-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(0, 212, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(0, 212, 255, 0.2);
+}
+
+.editable-content {
+    color: var(--text-light);
+}
+
+.section-title {
+    color: var(--hydrogen-cyan);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.lead {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: rgba(224, 231, 255, 0.9);
+}
+
+/* ===================================
+   Footer Section
+   =================================== */
+.footer-section {
+    padding: 2rem 0;
+    margin-top: 3rem;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.footer-text {
+    color: rgba(224, 231, 255, 0.6);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* ===================================
+   Animations
+   =================================== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    }
+    to {
+        text-shadow: 0 0 30px rgba(0, 212, 255, 0.8), 0 0 40px rgba(139, 92, 246, 0.6);
+    }
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 768px) {
+    .cosmic-title {
+        font-size: 2rem;
+    }
+
+    .content-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .logo-image {
+        max-width: 200px;
+    }
+
+    .main-container {
+        padding: 1rem 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .cosmic-title {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+
+    .content-card {
+        padding: 1.5rem 1rem;
+    }
+}
