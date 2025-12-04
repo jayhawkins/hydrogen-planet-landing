@@ -11,7 +11,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcJKAUsAAAAAPySlp4hpuwcZ6itm27Kl-pdImqp"></script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdIZiEsAAAAAE3lFLHX2Tlx3riS0cEpKTY4rJ6u"></script>
     
 </head>
 <body>
@@ -118,7 +118,7 @@
             let token = null;
 
             grecaptcha.enterprise.ready(async () => {
-                token = await grecaptcha.enterprise.execute('6LcJKAUsAAAAAPySlp4hpuwcZ6itm27Kl-pdImqp', {action: 'LOGIN'});
+                token = await grecaptcha.enterprise.execute('6LdIZiEsAAAAAE3lFLHX2Tlx3riS0cEpKTY4rJ6u', {action: 'LOGIN'});
             });
 
             if (!submitBtn) return;
